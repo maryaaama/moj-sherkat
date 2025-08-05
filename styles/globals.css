@@ -1,26 +1,152 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* فونت فارسی */
+@font-face {
+  font-family: "Vazir";
+  src: url("/fonts/Vazirmatn-Black.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+.vazir {
+  font-family: "Vazir", sans-serif;
+}
+body {
+  font-family: "Vazir", sans-serif;
+  background-color: black;
+   overflow-x: hidden;
+   margin-right: 0;
+   margin-left: 0;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* افکت دود پس‌زمینه */
+.smoke-bg,
+.smoke-layer {
+  background: url("/Fantasy_blue_textured_abstract_particles_in_organic_motion_Royalty_free_background_video.mp4") center center / cover no-repeat;
+  opacity: 0.15;
+  animation: slow-move 60s linear infinite;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@keyframes slow-move {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: -1000px 0;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* ماسک محو برای اسلایدر */
+.mask-fade {
+  --mask: linear-gradient(to right, transparent 0%, black 20%, black 80%, transparent 100%);
+  -webkit-mask-image: var(--mask);
+  mask-image: var(--mask);
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+}
+
+/* Swiper */
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 10px;
+  text-align: center;
+}
+.swiper-slide img {
+  display: block;
+  object-fit: cover;
+}
+
+/* نوار نئونی سفید مینیمال (مثل سایت portfolite) */
+.neon-button,
+.neon-white,
+input,
+textarea {
+  border: 2px solid white;
+  background-color: transparent;
+  border-radius: 8px;
+  box-shadow:
+    1px 1px 4px #fff,
+    -1px -1px 6px #fff;
+  transition: all 0.3s ease-in-out;
+  /* ⚠️ حذف padding و font-size از اینجا */
+}
+
+/* حالت hover — نور کمتر، نه آبی */
+.neon-button:hover,
+input:focus,
+textarea:focus {
+  background-color: #1a1a1a;
+  box-shadow:
+    2px 2px 6px #fff,
+    -2px -2px 8px #fff,
+    inset 0 0 2px #fff;
+}
+
+/* آیکون‌ها */
+.neon-icon {
+  color: white;
+  transition: 0.3s ease;
+}
+.neon-icon:hover {
+  filter: drop-shadow(0 0 3px #fff) drop-shadow(0 0 6px #fff);
+  transform: scale(1.05);
+}
+
+/* marquee */
+.scroll-track,
+.scroll-marquee {
+  display: flex;
+  width: max-content;
+  animation: scroll-x 20s linear infinite;
+}
+
+@keyframes scroll-x {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+.silver-particles-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none; /* کلیک‌ها را عبور می‌دهد */
+  z-index: 0; /* زیر همه عناصر */
+  overflow: hidden;
+}
+
+.silver-particle {
+  position: absolute;
+  top: -5px; /* کمی بالاتر از صفحه شروع می‌شود */
+  background: linear-gradient(135deg, #c0c0c0, #e0e0e0);
+  border-radius: 50%;
+  opacity: 0.8;
+  animation-name: fall-silver;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes fall-silver {
+  0% {
+    transform: translateY(0) translateX(0);
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(110vh) translateX(20px);
+    opacity: 0;
+  }
 }
