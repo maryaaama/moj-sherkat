@@ -10,7 +10,7 @@ import {
 
 import data from "@/data/db.json";
 
-// نگاشت نام آیکون‌ها از db.json به آیکون‌های واقعی FontAwesome
+
 const iconMap = {
   building: faBuilding,
   tools: faTools,
@@ -43,7 +43,7 @@ export default function Services() {
               cursor-pointer"
           >
             <FontAwesomeIcon
-              icon={iconMap[icon]} // نگاشت درست آیکون
+              icon={iconMap[icon]} 
               className="text-white text-6xl mb-5 neon-icon"
             />
             <h3 className="text-2xl font-semibold mb-3 vazir">{title}</h3>

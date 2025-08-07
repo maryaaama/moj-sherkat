@@ -11,13 +11,13 @@
   ],
   "imgSwiper":[
     {"id":1,
-     "src":"/img/swiper.png"
+     "src":"/img/sh1.jpg"
      },
      {"id":2,
-     "src":"/img/cod1.jpg"
+     "src":"/img/sh2.jpg"
      },
      {"id":3,
-     "src":"/img/code2.jpg"
+     "src":"/img/sh3.jpg"
      }
   ],
 
