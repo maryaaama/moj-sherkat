@@ -11,7 +11,7 @@ export default async function handler(req, res) {
 
   try {
     // endpoint وردپرس برای ثبت کامنت
-    const WP_API_URL = "https://your-wp-site.com/wp-json/wp/v2/comments";
+    const WP_API_URL = "http://localhost/moj-sherkat/wp-json/wp/v2/comments";
 
     // اگر نیاز به احراز هویت باشه (کاربر لاگین یا ادمین)
     const username = "maryamadmin";
