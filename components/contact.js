@@ -19,7 +19,7 @@ function ContactUs() {
     setStatus("sending");
 
     try {
-      const res = await fetch("/api/contact", {
+      const res = await fetch("/api/sendComment.js", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
@@ -76,7 +76,7 @@ function ContactUs() {
                   ایمیل
                 </h4>
                 <p className="text-gray-300 sm:text-lg text-base">
-                  info@novinsazeh.ir
+                  info@zibanamayekavian.ir
                 </p>
               </div>
             </div>
@@ -88,7 +88,7 @@ function ContactUs() {
                   آدرس
                 </h4>
                 <p className="text-gray-300 sm:text-lg text-base font-vazir">
-                  تهران، خیابان ولیعصر، برج سازه نوین، طبقه۵
+                  تهران، خیابان ولیعصر، برج زیبانمای کاویان، طبقه۵
                 </p>
               </div>
             </div>
